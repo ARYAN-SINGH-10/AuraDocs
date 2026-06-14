@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base}">
+
+<head>
+    <title>AuraDocs - Every Document Tool You Need in One Place</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-20 overflow-hidden bg-white dark:bg-[#0B0F19] transition-colors duration-300">
+            <!-- Light mode subtle sparkle dots -->
+            <div class="absolute inset-0 z-0 dark:hidden"
+                style="background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px); background-size: 40px 40px; opacity: 0.6;">
+            </div>
+            <!-- Dark mode star particles -->
+            <div class="absolute inset-0 z-0 hidden dark:block">
+                <div class="absolute top-20 left-1/4 w-1 h-1 bg-white rounded-full opacity-60"></div>
+                <div class="absolute top-40 left-1/3 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-80 animate-pulse">
+                </div>
+                <div class="absolute top-1/2 right-1/3 w-1 h-1 bg-white rounded-full opacity-50"></div>
+                <div class="absolute bottom-32 right-1/4 w-2 h-2 bg-purple-500 rounded-full opacity-40 blur-[1px]">
+                </div>
+                <div class="absolute top-1/4 right-1/5 w-1 h-1 bg-white rounded-full opacity-70"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <!-- Left Text -->
+                    <div class="max-w-xl text-center md:text-left z-10">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-[#251B4D] text-blue-600 dark:text-[#B794F4] text-sm font-medium mb-6 shadow-sm dark:shadow-none border border-blue-100 dark:border-transparent">
+                            Fast &bull; Secure &bull; Easy to use
+                        </div>
+                        <h1
+                            class="font-extrabold text-5xl md:text-6xl text-slate-900 dark:text-white tracking-tight leading-[1.1]">
+                            Every <span class="text-blue-600 dark:text-[#A78BFA]">PDF</span> Tool <br />You Need...
+                        </h1>
+                        <p class="mt-6 text-lg text-slate-500 dark:text-slate-300">
+                            Convert essentials effortlessly, with a clean and intuitive experience.
+                        </p>
+                        <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+                            <a href="#organize"
+                                class="px-8 py-3.5 bg-blue-600 dark:bg-[#8B5CF6] hover:bg-blue-700 dark:hover:bg-[#7C3AED] text-white font-semibold rounded-xl transition-colors shadow-lg shadow-blue-500/30 dark:shadow-[0_0_20px_rgba(139,92,246,0.3)]">
+                                Get Started
+                            </a>
+                            <a href="#convert"
+                                class="px-8 py-3.5 bg-white dark:bg-transparent border border-slate-200 dark:border-[#2D3748] hover:border-blue-300 dark:hover:border-[#4A5568] text-slate-700 dark:text-slate-300 font-medium rounded-xl transition-colors shadow-sm dark:shadow-none">
+                                Convert PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Illustration -->
+                    <div class="relative w-full max-w-[500px] z-10 flex items-center justify-center">
+                        <!-- Universal illustration for both light and dark modes -->
+                        <img th:src="@{/images/hero_universal.png}" alt="PDF Tools Illustration"
+                            class="w-full h-auto drop-shadow-[0_20px_40px_rgba(139,92,246,0.15)] animate-[float_6s_ease-in-out_infinite] scale-105 md:scale-110 md:translate-x-2" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Container -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-20" id="tools">
+
+            <!-- Category: Organize PDF -->
+            <div id="organize" class="scroll-mt-24">
+                <div class="flex items-center gap-3 mb-8 border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <div class="p-2 bg-blue-50 dark:bg-purple-950/40 text-blue-600 dark:text-purple-400 rounded-lg">
+                        <i data-lucide="layout-grid" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Organize Documents</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Merge Documents -->
+                    <a href="/merge-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(168,85,247,0.3)] bg-purple-100 text-purple-600 dark:bg-purple-500/10 dark:text-purple-400 group-hover:scale-105 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                                    <path d="M9 18H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v2" />
+                                    <path d="M14 2v4h4" />
+                                    <path d="M16 8H11a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-7l-5-5z" />
+                                    <path d="M16 8v5h5" />
+                                    <circle cx="13" cy="13" r="1.5" />
+                                    <path d="M9 19l3-3 2 2 3-3 4 4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Merge Documents</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Combine
+                                    multiple documents into one.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Split PDF -->
+                    <a href="/split-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(236,72,153,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(236,72,153,0.3)] bg-pink-100 text-pink-600 dark:bg-pink-500/10 dark:text-pink-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="scissors" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Split Document</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Extract
+                                    specific pages from your document.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Rotate PDF -->
+                    <a href="/rotate-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(217,70,239,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(217,70,239,0.3)] bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-500/10 dark:text-fuchsia-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="rotate-cw" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Rotate Document Pages
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Rotate your
+                                    document pages easily.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Extract Pages -->
+                    <a href="/extract-pages"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(168,85,247,0.3)] bg-purple-100 text-purple-600 dark:bg-purple-500/10 dark:text-purple-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="file-output" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Extract Pages</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Extract
+                                    specific pages into a new document.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Delete Pages -->
+                    <a href="/delete-pages"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(244,63,94,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(244,63,94,0.3)] bg-rose-100 text-rose-600 dark:bg-rose-500/10 dark:text-rose-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="trash-2" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Delete Pages</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Remove
+                                    unwanted pages online.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Reorder Pages -->
+                    <a href="/reorder-pages"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(139,92,246,0.3)] bg-violet-100 text-violet-600 dark:bg-violet-500/10 dark:text-violet-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="list-ordered" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Reorder Document Pages
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Rearrange
+                                    page sequence visually.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category: Convert PDF -->
+            <div id="convert" class="scroll-mt-24">
+                <div class="flex items-center gap-3 mb-8 border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <div class="p-2 bg-blue-50 dark:bg-purple-950/40 text-blue-600 dark:text-purple-400 rounded-lg">
+                        <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Convert Documents</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Word to PDF -->
+                    <a href="/word-to-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(59,130,246,0.3)] bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="file-text" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Word to PDF</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Convert DOC
+                                    and DOCX to PDF.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- PowerPoint to PDF -->
+                    <a href="/powerpoint-to-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(249,115,22,0.3)] bg-orange-100 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="presentation" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">PowerPoint to PDF</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Convert PPT
+                                    to clean PDF.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Text to PDF -->
+                    <a href="/text-to-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(71,85,105,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(71,85,105,0.3)] bg-slate-100 text-slate-600 dark:bg-slate-500/10 dark:text-slate-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="file-type-2" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Text to PDF</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Convert
+                                    plain text files to PDF.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- HTML to PDF -->
+                    <a href="/html-to-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.3)] bg-amber-100 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="code" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">HTML to PDF</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Convert
+                                    HTML or snippets to PDF.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- JPG to PDF -->
+                    <a href="/jpg-to-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(34,197,94,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(34,197,94,0.3)] bg-green-100 text-green-600 dark:bg-green-500/10 dark:text-green-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="image" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">JPG to PDF</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Convert
+                                    images into a single PDF.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- PDF to JPG -->
+                    <a href="/pdf-to-jpg"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(16,185,129,0.3)] bg-emerald-100 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="images" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">PDF to JPG</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Convert
+                                    each PDF page to JPG.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- PDF to Word -->
+                    <a href="/pdf-to-word"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(59,130,246,0.3)] bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="file-type" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">PDF to Word</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Extract
+                                    text from PDF to Word.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- PDF to HTML -->
+                    <a href="/pdf-to-html"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.3)] bg-amber-100 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="code" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">PDF to HTML</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Convert PDF
+                                    into a webpage.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- PDF to Text -->
+                    <a href="/pdf-to-text"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(100,116,139,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(100,116,139,0.3)] bg-slate-100 text-slate-600 dark:bg-slate-500/10 dark:text-slate-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="file-text" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">PDF to Text</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Extract
+                                    plain text from your PDF.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- PDF to PowerPoint -->
+                    <a href="/pdf-to-powerpoint"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(249,115,22,0.3)] bg-orange-100 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="presentation" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">PDF to PowerPoint</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Convert PDF
+                                    to PPTX presentation.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category: Edit PDF -->
+            <div id="edit" class="scroll-mt-24">
+                <div class="flex items-center gap-3 mb-8 border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <div class="p-2 bg-blue-50 dark:bg-purple-950/40 text-blue-600 dark:text-purple-400 rounded-lg">
+                        <i data-lucide="edit-3" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Edit Documents</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Add Watermark -->
+                    <a href="/add-watermark"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(14,165,233,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(14,165,233,0.3)] bg-sky-100 text-sky-600 dark:bg-sky-500/10 dark:text-sky-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="stamp" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Add Watermark</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Stamp a
+                                    text watermark.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Add Page Numbers -->
+                    <a href="/add-page-numbers"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(6,182,212,0.3)] bg-cyan-100 text-cyan-600 dark:bg-cyan-500/10 dark:text-cyan-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="hash" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Add Page Numbers</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Add
+                                    customizable page numbers.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Remove Watermark -->
+                    <a href="/remove-watermark"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(59,130,246,0.3)] bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="eraser" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Remove Watermark</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Remove text
+                                    watermark.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category: Optimize PDF -->
+            <div id="optimize" class="scroll-mt-24">
+                <div class="flex items-center gap-3 mb-8 border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <div class="p-2 bg-blue-50 dark:bg-purple-950/40 text-blue-600 dark:text-purple-400 rounded-lg">
+                        <i data-lucide="trending-down" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Optimize Documents</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Compress PDF -->
+                    <a href="/compress-pdf"
+                        class="bg-white dark:bg-[#111827] group flex flex-col justify-between p-6 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(234,179,8,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(234,179,8,0.3)] bg-yellow-100 text-yellow-600 dark:bg-yellow-500/10 dark:text-yellow-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="file-archive" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Compress Document</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Reduce file
+                                    size keeping quality.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category: Security -->
+            <div id="security" class="scroll-mt-24">
+                <div class="flex items-center gap-3 mb-8 border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <div class="p-2 bg-blue-50 dark:bg-purple-950/40 text-blue-600 dark:text-purple-400 rounded-lg">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Security</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Protect Document -->
+                    <a href="/protect-pdf"
+                        class="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-100 dark:border-slate-800 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(239,68,68,0.15)] transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm dark:shadow-[0_0_15px_rgba(239,68,68,0.3)] bg-red-100 text-red-600 dark:bg-red-500/10 dark:text-red-400 group-hover:scale-105 transition-transform duration-300">
+                                <i data-lucide="lock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Protect Document</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Secure
+                                    document with password.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <span
+                                class="text-slate-900 dark:text-white text-xs font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">Use
+                                Tool <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+</body>
+
+</html>
